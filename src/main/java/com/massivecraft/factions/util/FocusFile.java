@@ -1,13 +1,13 @@
 package com.massivecraft.factions.util;
 
 import org.bukkit.configuration.file.YamlConfiguration;
-import net.fathomtech.plugins.CityPlus.Main;
+import com.massivecraft.factions.P;
 import java.io.File;
 
 @SuppressWarnings("unused")
 public class FocusFile {
 
-    private final Main main;
+    private final P main;
     public final YamlConfiguration data = new YamlConfiguration();
     private final File focusFile;
 
