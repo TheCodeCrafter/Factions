@@ -34,9 +34,11 @@ import java.util.Map;
 import java.util.Set;
 import java.util.logging.Level;
 
-
 public class P extends MPlugin {
-
+    
+    // Data File (For Faction's Focused Enemies)
+    FocusFile focus;
+    
     // Our single plugin instance.
     // Single 4 life.
     public static P p;
@@ -75,6 +77,7 @@ public class P extends MPlugin {
         }
         this.loadSuccessful = false;
         saveDefaultConfig();
+        focusFile = new FocusFile(this);
 
         // Load Conf from disk
         Conf.load();
@@ -209,6 +212,7 @@ public class P extends MPlugin {
     public void postAutoSave() {
         //Board.getInstance().forceSave(); Not sure why this was there as it's called after the board is already saved.
         Conf.save();
+        focus.save();
     }
 
     @Override
